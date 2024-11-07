@@ -534,18 +534,18 @@ namespace SimpleCode_kek
 
             // 30 Задача 
             Console.WriteLine("30 Задача\n");
-            // Шаг 1: Ввод числа
+            
             Console.WriteLine("Введите натуральное число:");
             int nat = int.Parse(Console.ReadLine());
 
-            // Шаг 2: Переменная для подсчета количества делителей
-            int count = 0;            // Шаг 3: Итерируем по всем возможным делителям от 1 до квадратного корня числа
+            
+            int count = 0;            
             for (int i = 1; i <= Math.Sqrt(nat); i++)
             {
-                if (nat % i == 0) // Если i делит n нацело
+                if (nat % i == 0) 
                 {
-                    count++; // Увеличиваем счетчик делителей
-                    if (i != nat / i) // Если делители разные, то добавляем второй
+                    count++; 
+                    if (i != nat / i) 
                     {
                         count++;
                     }
