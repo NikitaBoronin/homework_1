@@ -30,12 +30,12 @@ namespace SimpleCode_kek
 
             // 2 задача
             Console.WriteLine("2 Задача \n");
-            Console.WriteLine(50);
-            Console.WriteLine(10);
+            Console.WriteLine($"50\n10");
             Console.WriteLine("\n");
 
             // 3 задача (Составить программу вывода на экран «столбиком» четырех любых чисел.)
             Console.WriteLine("3 Задача \n");
+            Console.WriteLine("Введите 4 числа: ");
             int num_one = int.Parse(Console.ReadLine());
             int num_two = int.Parse(Console.ReadLine());
             int num_three = int.Parse(Console.ReadLine());
@@ -46,6 +46,7 @@ namespace SimpleCode_kek
 
             // 4 задача
             Console.WriteLine("4 Задача \n");
+            Console.WriteLine("Введите число: ");
             int number = int.Parse(Console.ReadLine());
             Console.WriteLine(number + 10);
             Console.WriteLine("\n");
@@ -54,12 +55,13 @@ namespace SimpleCode_kek
             Console.WriteLine("5 Задача \n");
             Console.WriteLine("Введите сторону квадрата: ");
             int side = int.Parse(Console.ReadLine());
+            Console.Write("Периметр квадрата = ");
             Console.WriteLine(side * 4);
             Console.WriteLine("\n");
 
             // 6 задача
             Console.WriteLine("6 Задача \n");
-            int radius = int.Parse(Console.ReadLine());
+            int radius = 10;
             double circumference = 2 * Math.PI * radius;
             double area_circle = Math.PI * Math.Pow(radius, 2);
             Console.WriteLine($"Длина окружности: {circumference}");
@@ -68,7 +70,7 @@ namespace SimpleCode_kek
 
             // 7 задача
             Console.WriteLine("7 Задача \n");
-            double degrees = double.Parse(Console.ReadLine());
+            double degrees = double.Parse(Console.ReadLine()); // Градусы
             double radians = degrees * (Math.PI / 180);
             double y = Math.Cos(radians);
             Console.WriteLine(y);
@@ -81,8 +83,8 @@ namespace SimpleCode_kek
             int base_of_trapezoid_small = 3;
             int height_trapezoid = 6;
             double side_of_a_rectangle = (base_of_trapezoid_big - base_of_trapezoid_small)/2;
-            double hypotenuse_of_a_triangle = Math.Sqrt(height_trapezoid * height_trapezoid + side_of_a_rectangle * side_of_a_rectangle);
-            double perimetr = 2 * hypotenuse_of_a_triangle + base_of_trapezoid_small + base_of_trapezoid_big;
+            double hypotenuse_of_a_triangle = Math.Sqrt((height_trapezoid * height_trapezoid) + (side_of_a_rectangle * side_of_a_rectangle));
+            double perimetr = (2 * hypotenuse_of_a_triangle) + base_of_trapezoid_small + base_of_trapezoid_big;
             Console.WriteLine($"Периметр равен: {perimetr}");
             Console.WriteLine("\n");
 
@@ -104,10 +106,9 @@ namespace SimpleCode_kek
 
             // 10 задача
             Console.WriteLine("10 Задача \n");
-            Console.WriteLine("Мир Труд Май");
-            Console.WriteLine("Мир");
-            Console.WriteLine("     Труд");
-            Console.WriteLine("           Май");
+            Console.WriteLine("Мир Труд Май\nМир");
+            Console.WriteLine("    Труд");
+            Console.WriteLine("          Май");
             Console.WriteLine("\n");
 
             // 11 задача
@@ -122,7 +123,7 @@ namespace SimpleCode_kek
                 string strsecond_answer = Console.ReadLine();
                 strfirst_answer = strfirst_answer.Replace(',', '.');
                 strsecond_answer = strsecond_answer.Replace(',', '.');
-
+                Console.WriteLine("\n");
                 first_answer = Double.Parse(strfirst_answer, CultureInfo.InvariantCulture);
                 second_answer = Double.Parse(strsecond_answer, CultureInfo.InvariantCulture);
             }
@@ -134,7 +135,7 @@ namespace SimpleCode_kek
             
             double reverse_first = second_answer;
             double reverse_second = first_answer;
-            Console.WriteLine(reverse_first);
+            Console.WriteLine(reverse_first );
             Console.WriteLine(reverse_second);
             Console.WriteLine("\n");
 
@@ -168,11 +169,6 @@ namespace SimpleCode_kek
                     calculatedValue = a + b + c;
                     Console.WriteLine($"Периметр треугольника = {calculatedValue}");
 
-                    // Рассчитываем периметры других фигур на основе этого значения
-                    Console.WriteLine("\nРассчитаем возможные периметры других фигур:");
-                    Console.WriteLine($"Периметр четырехугольника: {calculatedValue}");
-                    double radiusFromPerimeter = calculatedValue / (2 * Math.PI);
-                    Console.WriteLine($"Длина окружности с приблизительным радиусом {radiusFromPerimeter:F2}");
                 }
                 else if (answer_user_for_figure == 2) // Площадь треугольника
                 {
@@ -182,13 +178,6 @@ namespace SimpleCode_kek
 
                     calculatedValue = 0.5 * baseLength * height;
                     Console.WriteLine($"Площадь треугольника = {calculatedValue}");
-
-                    // Рассчитываем площади других фигур на основе этого значения
-                    Console.WriteLine("\nРассчитаем возможные площади других фигур:");
-                    double side_treyg = Math.Sqrt(calculatedValue);
-                    Console.WriteLine($"Площадь четырехугольника с приблизительной стороной {side:F2}");
-                    double radiusFromArea = Math.Sqrt(calculatedValue / Math.PI);
-                    Console.WriteLine($"Площадь круга с приблизительным радиусом {radiusFromArea:F2}");
                 }
             }
             else if (answer_user == 2) // Четырехугольник
@@ -203,12 +192,6 @@ namespace SimpleCode_kek
 
                     calculatedValue = a + b + c + d;
                     Console.WriteLine($"Периметр четырехугольника = {calculatedValue}");
-
-                    // Рассчитываем периметры других фигур на основе этого значения
-                    Console.WriteLine("\nРассчитаем возможные периметры других фигур:");
-                    Console.WriteLine($"Периметр треугольника: {calculatedValue}");
-                    double radiusFromPerimeter = calculatedValue / (2 * Math.PI);
-                    Console.WriteLine($"Длина окружности с приблизительным радиусом {radiusFromPerimeter:F2}");
                 }
                 else if (answer_user_for_figure == 2) // Площадь четырехугольника
                 {
@@ -218,12 +201,6 @@ namespace SimpleCode_kek
                     calculatedValue = length * width;
                     Console.WriteLine($"Площадь четырехугольника = {calculatedValue}");
 
-                    // Рассчитываем площади других фигур на основе этого значения
-                    Console.WriteLine("\nРассчитаем возможные площади других фигур:");
-                    double side_chetryx = Math.Sqrt(calculatedValue);
-                    Console.WriteLine($"Площадь треугольника: {calculatedValue}");
-                    double radiusFromArea = Math.Sqrt(calculatedValue / Math.PI);
-                    Console.WriteLine($"Площадь круга с приблизительным радиусом {radiusFromArea:F2}");
                 }
             }
             else if (answer_user == 3) // Круг
@@ -236,10 +213,7 @@ namespace SimpleCode_kek
                     calculatedValue = 2 * Math.PI * radius_krug;
                     Console.WriteLine("Длина окружности: " + calculatedValue);
 
-                    // Рассчитываем периметры других фигур на основе этого значения
-                    Console.WriteLine("\nРассчитаем возможные периметры других фигур:");
-                    Console.WriteLine($"Периметр треугольника: {calculatedValue}");
-                    Console.WriteLine($"Периметр четырехугольника: {calculatedValue}");
+                 
                 }
                 else if (answer_user_for_figure == 2) // Площадь круга
                 {
@@ -249,11 +223,6 @@ namespace SimpleCode_kek
                     calculatedValue = Math.PI * Math.Pow(radius_krug, 2);
                     Console.WriteLine("Площадь круга: " + calculatedValue);
 
-                    // Рассчитываем площади других фигур на основе этого значения
-                    Console.WriteLine("\nРассчитаем возможные площади других фигур:");
-                    double side_a = Math.Sqrt(calculatedValue);
-                    Console.WriteLine($"Площадь треугольника: {calculatedValue}");
-                    Console.WriteLine($"Площадь четырехугольника с приблизительной стороной {side_a:F2}");
                 }
             }
             else
@@ -266,14 +235,14 @@ namespace SimpleCode_kek
 
             // 13 задача
             Console.WriteLine("13 Задача \n");
+            Console.WriteLine("Введите число: \n");
             int number_user = int.Parse(Console.ReadLine());
             Console.WriteLine($"Вы ввели число {number_user}");
             Console.WriteLine("\n");
 
             // 14 задача
             Console.WriteLine("14 Задача \n");
-            Console.WriteLine("2 кг");
-            Console.WriteLine("13 17");
+            Console.WriteLine("2 кг\n13 17");
             Console.WriteLine("\n");
 
             // 15 задача
@@ -301,7 +270,7 @@ namespace SimpleCode_kek
                 Console.WriteLine("Это не квадратное уравнение! ");
             }
 
-            double D = secondkoef * secondkoef - 4 * firstkoef * thridkoef;
+            double D = (secondkoef * secondkoef) - (4 * firstkoef * thridkoef);
 
             if (D > 0)
             {
