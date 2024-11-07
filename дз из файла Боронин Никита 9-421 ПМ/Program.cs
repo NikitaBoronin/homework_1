@@ -349,11 +349,11 @@ namespace SimpleCode_kek
 
             int hours = (int)seconds_passed / 3600;
             double ost_hours = seconds_passed % 3600;
-            
-            int minutes = (int)ost_hours / 60;
-            double ost_minutes = minutes % 60;
 
-            int seconds = (int)ost_minutes;
+            int minutes = (int)ost_hours / 60;
+            double ost_minutes = ost_hours % 60;  
+
+            int seconds = (int)ost_minutes; 
 
             Console.WriteLine($"Полных часов с начала суток = {hours}");
             Console.WriteLine($"Полных минут с начала часа = {minutes}");
