@@ -348,9 +348,9 @@ namespace SimpleCode_kek
             double seconds_passed = Double.Parse(Console.ReadLine());
 
             int hours = (int)seconds_passed / 3600;
-            double ost_seconds = seconds_passed % 3600;
+            double ost_hours = seconds_passed % 3600;
             
-            int minutes = (int)ost_seconds / 60;
+            int minutes = (int)ost_hours / 60;
             double ost_minutes = minutes % 60;
 
             int seconds = (int)ost_minutes;
