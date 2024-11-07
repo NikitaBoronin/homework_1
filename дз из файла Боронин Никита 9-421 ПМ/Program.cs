@@ -495,12 +495,12 @@ namespace SimpleCode_kek
             Console.Write("Введите третье число: ");
             double Num3 = double.Parse(Console.ReadLine());
 
-            // Шаг 2: Находим модуль каждого числа
+            
             double absNum1 = Math.Abs(Num1);
             double absNum2 = Math.Abs(Num2);
             double absNum3 = Math.Abs(Num3);
 
-            // Шаг 3: Ищем наименьшее число по модулю
+            
             double minValue = Num1; // Сначала предполагаем, что первое число минимально
 
             if (absNum2 < absNum1)
@@ -513,7 +513,7 @@ namespace SimpleCode_kek
                 minValue = Num3; // Третье число меньше по модулю
             }
 
-            // Шаг 4: Выводим результат на экран
+           
             Console.WriteLine($"{minValue}");
 
 
