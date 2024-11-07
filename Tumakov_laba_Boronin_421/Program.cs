@@ -51,11 +51,25 @@ namespace Tumakov_laba_Boronin_421
             Console.WriteLine("c: ");
             int c = int.Parse(Console.ReadLine());
 
-            int D = (b * b) - ( 4 * a * c);
-            double x1 = (-b + Math.Sqrt(D))/ (2 * a);
-            double x2 = (-b - Math.Sqrt(D))/ (2 * a);
+            int D = (b * b) - (4 * a * c);
+            
+            if (D > 0)
+            {
+                double x1 = (-b + Math.Sqrt(D))/ (2 * a);
+                double x2 = (-b - Math.Sqrt(D))/ (2 * a);
+                Console.WriteLine($"x1 = {x1}\nx2 = {x2}");
+            }
+            else if (D == 0)
+            {
+                double x = -b/ (2 * a);
+                Console.WriteLine($"Получился 1 корень! x={x}");
+            }
+            else if (D < 0)
+            {
+                Console.WriteLine($"Вещественных корней нет!");
+            }
 
-            Console.WriteLine($"x1 = {x1}\nx2 = {x2}");
+            
         }
     }
 }
