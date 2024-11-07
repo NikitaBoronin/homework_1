@@ -132,16 +132,16 @@ namespace SimpleCode_kek
 
                 Console.WriteLine("Вы ввели не число!"); ;
             }
-            
+
             double reverse_first = second_answer;
             double reverse_second = first_answer;
-            Console.WriteLine(reverse_first );
+            Console.WriteLine(reverse_first);
             Console.WriteLine(reverse_second);
             Console.WriteLine("\n");
 
-            
 
-            
+
+
             // 12 задание
             Console.WriteLine("12 Задача \n");
             Console.WriteLine("Выберите фигуру:\nТреугольник - 1\nЧетырехугольник - 2\nКруг - 3");
@@ -213,7 +213,7 @@ namespace SimpleCode_kek
                     calculatedValue = 2 * Math.PI * radius_krug;
                     Console.WriteLine("Длина окружности: " + calculatedValue);
 
-                 
+
                 }
                 else if (answer_user_for_figure == 2) // Площадь круга
                 {
@@ -230,7 +230,7 @@ namespace SimpleCode_kek
                 Console.WriteLine("Я не знаю такой фигуры!");
             }
 
-            
+
             Console.WriteLine("\n");
 
             // 13 задача
@@ -287,7 +287,7 @@ namespace SimpleCode_kek
             {
                 Console.WriteLine($"Вещественных корней нет!");
             }
-            
+
             Console.WriteLine("\n");
 
             // 17 задача
@@ -351,9 +351,9 @@ namespace SimpleCode_kek
             double ost_hours = seconds_passed % 3600;
 
             int minutes = (int)ost_hours / 60;
-            double ost_minutes = ost_hours % 60;  
+            double ost_minutes = ost_hours % 60;
 
-            int seconds = (int)ost_minutes; 
+            int seconds = (int)ost_minutes;
 
             Console.WriteLine($"Полных часов с начала суток = {hours}");
             Console.WriteLine($"Полных минут с начала часа = {minutes}");
@@ -376,7 +376,7 @@ namespace SimpleCode_kek
             int ost_last_right = 328 % 10;
             int new_three_digit_number = 328 / 10;
             new_three_digit_number = (100 * ost_last_right) + new_three_digit_number;
-            Console.WriteLine(new_three_digit_number);
+            Console.WriteLine($"Новое трехзначное число: {new_three_digit_number}");
 
             Console.WriteLine("\n");
 
@@ -391,18 +391,18 @@ namespace SimpleCode_kek
 
             // 24 Задача 
             Console.WriteLine("24 Задача\n");
-            int numberint = 8392; 
-            string numberStr = numberint.ToString(); 
+            int numberint = 8392;
+            string numberStr = numberint.ToString();
 
-            
+
             char[] charArray = numberStr.ToCharArray();
             Array.Reverse(charArray);
             string reversedStr = new string(charArray);
 
-            // Преобразуем реверсированную строку обратно в число
+
             int reversedNumber = int.Parse(reversedStr);
 
-            Console.WriteLine("Число, полученное при прочтении цифр справа налево: " + reversedNumber);
+            Console.WriteLine($"Число, полученное при прочтении цифр справа налево: {reversedNumber}");
             Console.WriteLine("\n");
 
             // 25 Задача
@@ -411,209 +411,211 @@ namespace SimpleCode_kek
             int nu = int.Parse(Console.ReadLine());
 
             // Проверяем, что n соответствует условиям
-            if (nu < 100 || nu > 999 || (nu / 10) % 10 == 0)
-        {
+            if (n < 100 || nu > 999 || (nu / 10) % 10 == 0)
+            {
                 Console.WriteLine("Число n не соответствует условиям задачи.");
-                return;
-            }
-
-            // Последняя цифра числа n
-            int lastDigit = nu % 10;
-
-            // Остальные цифры числа n без последней
-            int remainingPart = nu / 10;
-
-            // Восстанавливаем число x
-            int x = remainingPart * 10 + lastDigit;
-
-            // Выводим результат
-            Console.WriteLine($"Число x = {x}\n");
-
-            // 26 Задание
-            Console.WriteLine("26 Задание");
-            Console.WriteLine("Введите количество часов: ");
-            int chas = int.Parse(Console.ReadLine());
-            chas = chas % 12; // У нас всего же 12-ти часовая стрелка как AM и PM
-            Console.WriteLine("Введите количество минут: ");
-            int minuti = int.Parse(Console.ReadLine());
-            Console.WriteLine("Введите количество секунд: ");
-            int secund = int.Parse(Console.ReadLine());
-       
-            double gradus = (chas * 30) + (minuti * 0.5) + (secund * (0.5 / 60));
-            Console.WriteLine(gradus);
-
-            Console.WriteLine("\n");
-
-            // 27 Задача
-            Console.WriteLine("27 Задача");
-
-
-            Console.WriteLine("\n");
-
-            
-
-
-
-            // 28 Задача
-            Console.WriteLine("28 Задание\n");
-            double Num1 = double.Parse(Console.ReadLine());
-
-            Console.Write("Введите второе число: ");
-            double Num2 = double.Parse(Console.ReadLine());
-
-            Console.Write("Введите третье число: ");
-            double Num3 = double.Parse(Console.ReadLine());
-
-            
-            double absNum1 = Math.Abs(Num1);
-            double absNum2 = Math.Abs(Num2);
-            double absNum3 = Math.Abs(Num3);
-
-            
-            double minValue = Num1; // Сначала предполагаем, что первое число минимально
-
-            if (absNum2 < absNum1)
-            {
-                minValue = Num2; // Второе число меньше по модулю
-            }
-
-            if (absNum3 < Math.Abs(minValue))
-            {
-                minValue = Num3; // Третье число меньше по модулю
-            }
-
-           
-            Console.WriteLine($"{minValue}");
-
-
-            Console.WriteLine("\n");
-
-            // 29 Задача
-            Console.WriteLine("29 Задача\n");
-            int numone = int.Parse(Console.ReadLine());
-            int numtwo = int.Parse(Console.ReadLine());
-            int numthree = int.Parse(Console.ReadLine());
-
-            int MaxNum = Math.Max(numone, Math.Max(numtwo, numthree));
-            int MinNum = Math.Min(numone, Math.Min(numtwo, numthree));
-            
-            int sum = MaxNum + MinNum;
-            Console.WriteLine(sum);
-            Console.WriteLine("\n");
-
-            // 30 Задача 
-            Console.WriteLine("30 Задача\n");
-            
-            Console.WriteLine("Введите натуральное число:");
-            int nat = int.Parse(Console.ReadLine());
-
-            
-            int count = 0;            
-            for (int i = 1; i <= Math.Sqrt(nat); i++)
-            {
-                if (nat % i == 0) 
-                {
-                    count++; 
-                    if (i != nat / i) 
-                    {
-                        count++;
-                    }
-                }
-            }
-
-            Console.WriteLine($"Количество делителей числа {nat}: {count}");
-
-            // 32 Задача
-            Console.WriteLine("32 Задача");
-            int pervi_chlen = 3;
-            int two_chlen = 6;
-
-            int plus = two_chlen - pervi_chlen;
-            Console.WriteLine("Введите номер элемента: ");
-            int nomer_elementa = int.Parse(Console.ReadLine());
-
-            int result_num = plus * nomer_elementa;
-            Console.WriteLine(result_num);
-
-
-            Console.WriteLine("\n");
-
-            // 33 Задача
-            Console.WriteLine("33 Задача");
-            Console.Write("Вы студент? (да/нет): ");
-            string isStudent = Console.ReadLine().ToLower();
-
-            Console.Write("Вы пенсионер? (да/нет): ");
-            string isPensioner = Console.ReadLine().ToLower();
-
-            Console.Write("Вы трудоустроены? (да/нет): ");
-            string isEmployed = Console.ReadLine().ToLower();
-
-            // Логика проверки на получение кредита
-            bool student = isStudent == "да";
-            bool pensioner = isPensioner == "да";
-            bool employed = isEmployed == "да";
-
-            // Проверяем условия
-            if ((student && pensioner) || (employed && !student && !pensioner))
-            {
-                Console.WriteLine("Кредит не дадут.");
-            }
-            else if ((student && !employed) || (pensioner && !employed))
-            {
-                Console.WriteLine("Кредит дадут.");
+                    
             }
             else
             {
-                Console.WriteLine("Кредит не дадут.");
-            }
-            Console.WriteLine("\n");
+                int lastDigitOfN = nu % 10;
+                //int remainingPartOfN = nu / 10;
 
-            // 34 Задача
-            Console.WriteLine("34 Задача\n");
-            Console.WriteLine("Как Вас зовут?");
-            string Name_user = Console.ReadLine();
-            Console.WriteLine(Name_user);
-            Console.WriteLine($"Здравствуйте {Name_user}");
-            Console.WriteLine("\n");
 
-            // 35 Задание
-            Console.WriteLine("35 Задание\n");
+                int x = lastDigitOfN * 100 + nu / 10;
 
-            Console.WriteLine("(пользователь) Привет Консоль!\n(консоль) Как Вас зовут?");
-            Console.WriteLine("(пользователь) Меня зовут (введите Ваше имя)");
-            string name = Console.ReadLine();
-            Console.WriteLine($"(консоль) привет, {name}\n(пользователь) Знаешь ли ты что-то о тайной комнате?");
-            Console.WriteLine("(консоль) да\n(пользователь) А можешь рассказать мне?\n(консоль) нет");
-            Thread.Sleep(5000);
-            Console.WriteLine("(консоль) но могу показать");
-            Random random = new Random();
-            int colorIndex = random.Next(1, 4);
-            if (colorIndex == 1)
-            {
-                Console.BackgroundColor = ConsoleColor.DarkCyan;
+
+                Console.WriteLine($"Число x = {x}\n");
             }
-            else if (colorIndex == 2)
-            {
-                Console.BackgroundColor = ConsoleColor.Cyan;
-            }
-            else if (colorIndex == 3)
-            {
-                Console.BackgroundColor = ConsoleColor.Blue;
-            }
+                
+                
+
+                // 26 Задание
+                Console.WriteLine("26 Задание");
+                Console.WriteLine("Введите количество часов: ");
+                int chas = int.Parse(Console.ReadLine());
+                chas = chas % 12; // У нас всего же 12-ти часовая стрелка как AM и PM
+                Console.WriteLine("Введите количество минут: ");
+                int minuti = int.Parse(Console.ReadLine());
+                Console.WriteLine("Введите количество секунд: ");
+                int secund = int.Parse(Console.ReadLine());
+
+                double gradus = (chas * 30) + (minuti * 0.5) + (secund * (0.5 / 60));
+                Console.WriteLine(gradus);
+
+                Console.WriteLine("\n");
+
+                // 27 Задача
+                Console.WriteLine("27 Задача");
+
+
+                Console.WriteLine("\n");
+
+
+
+
+
+                // 28 Задача
+                Console.WriteLine("28 Задание\n");
+                double Num1 = double.Parse(Console.ReadLine());
+
+                Console.Write("Введите второе число: ");
+                double Num2 = double.Parse(Console.ReadLine());
+
+                Console.Write("Введите третье число: ");
+                double Num3 = double.Parse(Console.ReadLine());
+
+
+                double absNum1 = Math.Abs(Num1);
+                double absNum2 = Math.Abs(Num2);
+                double absNum3 = Math.Abs(Num3);
+
+
+                double minValue = Num1; // Сначала предполагаем, что первое число минимально
+
+                if (absNum2 < absNum1)
+                {
+                    minValue = Num2; // Второе число меньше по модулю
+                }
+
+                if (absNum3 < Math.Abs(minValue))
+                {
+                    minValue = Num3; // Третье число меньше по модулю
+                }
+
+
+                Console.WriteLine($"{minValue}");
+
+
+                Console.WriteLine("\n");
+
+                // 29 Задача
+                Console.WriteLine("29 Задача\n");
+                int numone = int.Parse(Console.ReadLine());
+                int numtwo = int.Parse(Console.ReadLine());
+                int numthree = int.Parse(Console.ReadLine());
+
+                int MaxNum = Math.Max(numone, Math.Max(numtwo, numthree));
+                int MinNum = Math.Min(numone, Math.Min(numtwo, numthree));
+
+                int sum = MaxNum + MinNum;
+                Console.WriteLine(sum);
+                Console.WriteLine("\n");
+
+                // 30 Задача 
+                Console.WriteLine("30 Задача\n");
+
+                Console.WriteLine("Введите натуральное число:");
+                int nat = int.Parse(Console.ReadLine());
+
+
+                int count = 0;
+                for (int i = 1; i <= Math.Sqrt(nat); i++)
+                {
+                    if (nat % i == 0)
+                    {
+                        count++;
+                        if (i != nat / i)
+                        {
+                            count++;
+                        }
+                    }
+                }
+
+                Console.WriteLine($"Количество делителей числа {nat}: {count}");
+
+                // 32 Задача
+                Console.WriteLine("32 Задача");
+                int pervi_chlen = 3;
+                int two_chlen = 6;
+
+                int plus = two_chlen - pervi_chlen;
+                Console.WriteLine("Введите номер элемента: ");
+                int nomer_elementa = int.Parse(Console.ReadLine());
+
+                int result_num = plus * nomer_elementa;
+                Console.WriteLine(result_num);
+
+
+                Console.WriteLine("\n");
+
+                // 33 Задача
+                Console.WriteLine("33 Задача");
+                Console.Write("Вы студент? (да/нет): ");
+                string isStudent = Console.ReadLine().ToLower();
+
+                Console.Write("Вы пенсионер? (да/нет): ");
+                string isPensioner = Console.ReadLine().ToLower();
+
+                Console.Write("Вы трудоустроены? (да/нет): ");
+                string isEmployed = Console.ReadLine().ToLower();
+
+                // Логика проверки на получение кредита
+                bool student = isStudent == "да";
+                bool pensioner = isPensioner == "да";
+                bool employed = isEmployed == "да";
+
+                // Проверяем условия
+                if ((student && pensioner) || (employed && !student && !pensioner))
+                {
+                    Console.WriteLine("Кредит не дадут.");
+                }
+                else if ((student && !employed) || (pensioner && !employed))
+                {
+                    Console.WriteLine("Кредит дадут.");
+                }
+                else
+                {
+                    Console.WriteLine("Кредит не дадут.");
+                }
+                Console.WriteLine("\n");
+
+                // 34 Задача
+                Console.WriteLine("34 Задача\n");
+                Console.WriteLine("Как Вас зовут?");
+                string Name_user = Console.ReadLine();
+                Console.WriteLine(Name_user);
+                Console.WriteLine($"Здравствуйте {Name_user}");
+                Console.WriteLine("\n");
+
+                // 35 Задание
+                Console.WriteLine("35 Задание\n");
+
+                Console.WriteLine("(пользователь) Привет Консоль!\n(консоль) Как Вас зовут?");
+                Console.WriteLine("(пользователь) Меня зовут (введите Ваше имя)");
+                string name = Console.ReadLine();
+                Console.WriteLine($"(консоль) привет, {name}\n(пользователь) Знаешь ли ты что-то о тайной комнате?");
+                Console.WriteLine("(консоль) да\n(пользователь) А можешь рассказать мне?\n(консоль) нет");
+                Thread.Sleep(5000);
+                Console.WriteLine("(консоль) но могу показать");
+                Random random = new Random();
+                int colorIndex = random.Next(1, 4);
+                if (colorIndex == 1)
+                {
+                    Console.BackgroundColor = ConsoleColor.DarkCyan;
+                }
+                else if (colorIndex == 2)
+                {
+                    Console.BackgroundColor = ConsoleColor.Cyan;
+                }
+                else if (colorIndex == 3)
+                {
+                    Console.BackgroundColor = ConsoleColor.Blue;
+                }
+
+                Console.WriteLine("\n");
+
+
+
             
-            Console.WriteLine("\n");
-            
+
+
+
+
+
 
 
         }
 
-        
-
-
-        
-       
-
     }
-
 }
