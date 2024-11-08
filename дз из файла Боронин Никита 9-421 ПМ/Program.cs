@@ -457,6 +457,7 @@ namespace SimpleCode_kek
 
                 // 28 Задача
                 Console.WriteLine("28 Задание\n");
+                Console.Write("Введите первое число: ");
                 double Num1 = double.Parse(Console.ReadLine());
 
                 Console.Write("Введите второе число: ");
@@ -491,15 +492,18 @@ namespace SimpleCode_kek
 
                 // 29 Задача
                 Console.WriteLine("29 Задача\n");
+                Console.Write("Введите первое число: ");
                 int numone = int.Parse(Console.ReadLine());
+                Console.Write("Введите второе число: ");
                 int numtwo = int.Parse(Console.ReadLine());
+                Console.Write("Введите третье число: ");
                 int numthree = int.Parse(Console.ReadLine());
 
                 int MaxNum = Math.Max(numone, Math.Max(numtwo, numthree));
                 int MinNum = Math.Min(numone, Math.Min(numtwo, numthree));
 
                 int sum = MaxNum + MinNum;
-                Console.WriteLine(sum);
+                Console.WriteLine($"Результать: {sum}");
                 Console.WriteLine("\n");
 
                 // 30 Задача 
@@ -524,7 +528,42 @@ namespace SimpleCode_kek
 
                 Console.WriteLine($"Количество делителей числа {nat}: {count}");
 
+            // 31 Задача
+            Console.WriteLine("31 Задача");
+            Console.WriteLine("Введите коэффициенты для уравнения A*X^3 + B*X^2 + C*X + D = 0");
+
+            Console.Write("Введите коэффициент A: ");
+            int pervi_three = int.Parse(Console.ReadLine());
+
+            Console.Write("Введите коэффициент B: ");
+            int vtoroi_three = int.Parse(Console.ReadLine());
+
+            Console.Write("Введите коэффициент C: ");
+            int treti_three = int.Parse(Console.ReadLine());
+
+            Console.Write("Введите коэффициент D: ");
+            int chetveri_three = int.Parse(Console.ReadLine());
+
+            bool rootFound = false;
+
+            for (int rass = -100; rass <= 100; rass++)
+            {
+                
+                if (pervi_three * rass * rass * rass + vtoroi_three * rass * rass + treti_three * rass + chetveri_three == 0)
+                {
+                    Console.WriteLine($"Найден целый корень уравнения: x = {rass}");
+                    rootFound = true;
+                }
+            }
+
+            if (!rootFound)
+            {
+                Console.WriteLine("Целых корней на отрезке [-100, 100] не найдено.");
+            }
+
+
                 // 32 Задача
+
                 Console.WriteLine("32 Задача");
                 int pervi_chlen = 3;
                 int two_chlen = 6;
@@ -533,34 +572,37 @@ namespace SimpleCode_kek
                 Console.WriteLine("Введите номер элемента: ");
                 int nomer_elementa = int.Parse(Console.ReadLine());
 
-                int result_num = plus * nomer_elementa;
-                Console.WriteLine(result_num);
+                int result_num = pervi_chlen + (nomer_elementa - 1) * plus;
+            
+                Console.WriteLine($"Результат: {result_num}");
+                
 
 
                 Console.WriteLine("\n");
 
+            
                 // 33 Задача
                 Console.WriteLine("33 Задача");
                 Console.Write("Вы студент? (да/нет): ");
                 string isStudent = Console.ReadLine().ToLower();
-
+                
                 Console.Write("Вы пенсионер? (да/нет): ");
                 string isPensioner = Console.ReadLine().ToLower();
 
                 Console.Write("Вы трудоустроены? (да/нет): ");
                 string isEmployed = Console.ReadLine().ToLower();
 
-                // Логика проверки на получение кредита
+                
                 bool student = isStudent == "да";
                 bool pensioner = isPensioner == "да";
                 bool employed = isEmployed == "да";
 
-                // Проверяем условия
-                if ((student && pensioner) || (employed && !student && !pensioner))
+                
+                if (student && pensioner)
                 {
                     Console.WriteLine("Кредит не дадут.");
                 }
-                else if ((student && !employed) || (pensioner && !employed))
+                else if ((student || pensioner) && !employed)
                 {
                     Console.WriteLine("Кредит дадут.");
                 }
@@ -588,6 +630,7 @@ namespace SimpleCode_kek
                 Console.WriteLine("(консоль) да\n(пользователь) А можешь рассказать мне?\n(консоль) нет");
                 Thread.Sleep(5000);
                 Console.WriteLine("(консоль) но могу показать");
+
                 Random random = new Random();
                 int colorIndex = random.Next(1, 4);
                 if (colorIndex == 1)
@@ -603,11 +646,16 @@ namespace SimpleCode_kek
                     Console.BackgroundColor = ConsoleColor.Blue;
                 }
 
-                Console.WriteLine("\n");
-
-
+            
+            Console.Clear();
+            Console.WriteLine("");
 
             
+            //Console.ResetColor();
+
+
+
+
 
 
 
